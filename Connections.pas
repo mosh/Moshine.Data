@@ -13,10 +13,15 @@ type
     class method LoadConnections(filename:String):Dictionary<String,Connection>;
     begin
 
-      var assemblyLocation := typeOf(Connections).Assembly.Location;
-      var rootFolder := Path.GetDirectoryName(assemblyLocation);
+      var rootFolder := Path.GetDirectoryName(filename);
+      var fullFilename := filename;
 
-      var fullFilename := Path.Combine(rootFolder,filename);
+      if(String.IsNullOrEmpty(rootFolder))then
+      begin
+        var assemblyLocation := typeOf(Connections).Assembly.Location;
+        rootFolder := Path.GetDirectoryName(assemblyLocation);
+        fullFilename := Path.Combine(rootFolder,filename);
+      end;
 
       var items := new Dictionary<String,Connection>;
 
