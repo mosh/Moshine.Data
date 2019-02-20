@@ -29,7 +29,7 @@
     <Reference Include="Echoes">
       <Private>True</Private>
     </Reference>
-    <NuGetReference Include="Dapper:[1.50.5]">
+    <NuGetReference Include="Dapper:[1.50.7]">
       <Private>True</Private>
     </NuGetReference>
     <NuGetReference Include="npgsql:[4.0.4]">
