@@ -47,7 +47,7 @@ type
       end
       else
       begin
-        raise new Exception('connections file not found');
+        raise new Exception($'connections file not found {fullFilename}');
       end;
       exit items;
     end;
